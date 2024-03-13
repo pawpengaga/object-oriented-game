@@ -24,7 +24,7 @@ include GameOptions
   char_sym: "★"
 )
 
-@julie = GameObject::Character.new(
+@emily = GameObject::Character.new(
   name: "Emily",
   profile: "Emily is a shy protagonist",
   color: 35,
@@ -40,11 +40,11 @@ def scriptLoader
 
   @helen.dialogue("Hola, estoy probando este script")
 
-  @julie.dialogue("Ojalá funcione...")
+  @emily.dialogue("Ojalá funcione...")
 
   @helen.dialogue("Vamos! Nosotras podemos! Casi implementamos la funcionalidad de Ren\'py hehe")
 
-  @julie.dialogue("Esperemos...")
+  @emily.dialogue("Esperemos...")
 
   @narrator.dialogue("Y así, las chicas pudieron hablar por medio de la consola de la computadora... su aventura apenas empezaba... XD")
 end

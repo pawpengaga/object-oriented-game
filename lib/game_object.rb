@@ -1,9 +1,9 @@
 module GameObject
   require "io/console" #Interacción con el usuario
   require_relative "game_options.rb"
-  include GameOptions
 
   class Character
+    include GameOptions
     # * en Ruby, conocido como operador splat. Este operador se utiliza para convertir un array en una lista de argumentos separados por comas
     REQUIRED_KEYS = [:name, :profile, :color, :image, :role, :char_sym]
     #attr_accessor *REQUIRED_KEYS #POG
@@ -44,7 +44,7 @@ module GameObject
           textAnimator("\e[3m#{text}\e[0m")
         end
         #No me gusta este resultado
-        chosen_option = GameOptions.mainMenu()
+        chosen_option = mainMenu()
 
         break if chosen_option == "z"
         exit if chosen_option == 'q'
@@ -65,7 +65,7 @@ module GameObject
     def titleFormatter()
       return <<-TEXT
 #{"=" * (self.name.length + 4)}
-#{self.char_sym} #{GameOptions.text_color(self.name, self.color)} #{self.char_sym}
+#{self.char_sym} #{text_color(self.name, self.color)} #{self.char_sym}
 #{"=" * (self.name.length + 4)}
     TEXT
 
@@ -76,11 +76,12 @@ module GameObject
     end
 
     def textAnimator(input_text)
+      text_vel = 0.0009
       animated_text = ""
       input_text.each_char do |u|
         animated_text += u
         print u
-        sleep(0.03)
+        sleep(text_vel)
       end
       return animated_text
     end

@@ -12,6 +12,6 @@ Q: Salir
   end
 
   def text_color(text, color_code)
-    "\e[#{color_code}m#{text}\e[0m"
+    return "\e[#{color_code}m#{text}\e[0m"
   end
 end

@@ -30,7 +30,7 @@ module GameObject
     end
 
     def talk
-      puts "Hola! Soy #{self.name}... Mucho gusto de conocerte c:"
+      textAnimator("Hola! Soy #{self.name}... Mucho gusto de conocerte c:")
     end
 
     def dialogue(text)
@@ -39,9 +39,9 @@ module GameObject
         puts "\n"
         puts titleFormatter() unless self.name == "Narrator"
         if self.name != "Narrator"
-          puts text
+          textAnimator(text)
         else
-          puts "\e[3m#{text}\e[0m"
+          textAnimator("\e[3m#{text}\e[0m")
         end
         #No me gusta este resultado
         chosen_option = GameOptions.mainMenu()
@@ -73,6 +73,16 @@ module GameObject
 
     def clear_screen
       system("clear") || system("cls")
+    end
+
+    def textAnimator(input_text)
+      animated_text = ""
+      input_text.each_char do |u|
+        animated_text += u
+        print u
+        sleep(0.03)
+      end
+      return animated_text
     end
 
   end

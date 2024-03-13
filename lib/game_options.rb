@@ -1,7 +1,7 @@
 module GameOptions
 
   def mainMenu
-    puts "\n"
+    puts "\n \n"
     puts <<-TEXT
 Z: Continuar
 Q: Salir

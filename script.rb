@@ -7,7 +7,7 @@ include GameOptions
 
 @narrator = GameObject::Character.new(
   name: "Narrator",
-  profile: "Identity Unknown",
+  profile: "None",
   color: 37,
   image: "none.png",
   role: "narrator",
@@ -17,7 +17,7 @@ include GameOptions
 
 @helen = GameObject::Character.new(
   name: "Helen",
-  profile: "Helen is a happy character",
+  profile: "Helen is the protagonist",
   color: 36,
   image: "helen.png",
   role: "protagonist",
@@ -65,16 +65,19 @@ include GameOptions
 
 def scriptLoader
   script_one()
+  script_three()
 end
 
 private
 
 def script_one
-  @helen.dialogue("Hola, estamos probando este script!")
+  @helen.dialogue("Hola, soy Helen, y estamos probando este script!")
 
   @emily.dialogue("Si quieres leer alguna de nuestras historias, cargala en el scriptLoader... son 4 en total")
 
-  @helen.dialogue("Si quieres escribir una nueva, escribe el guion y cárgala en el ScriptLoader")
+  @emily.dialogue("A continuación de hecho, aparecerá una de ellas, fue escrita por ChatGPT, así que no esperes calidad narrativa.")
+
+  @helen.dialogue("Si quieres crear una nueva historia, escribe el guion y cárgala en el ScriptLoader")
 
   @emily.dialogue("Esperamos que te guste mucho este proyecto")
 
@@ -82,7 +85,7 @@ def script_one
 end
 
 def script_two
-      # Introducción
+    # Introducción
   @narrator.dialogue("En una tranquila tarde de otoño, en la pequeña ciudad de Springdale, nuestros protagonistas se encuentran en la escuela secundaria, preparándose para una reunión del club de ciencia.")
 
   @helen.dialogue("Hola, Emily. ¿Estás lista para la reunión de hoy?")
@@ -135,58 +138,62 @@ def script_two
 end
 
 def script_three
-    # Introducción
-    @narrator.dialogue("En una noche estrellada en Springdale, nuestros protagonistas se encuentran en una excursión escolar en el bosque cercano.")
+  # Introducción
+  @narrator.dialogue("HISTORIA N°3")
 
-    @helen.dialogue("¡Qué emocionante! Nunca he estado en un bosque por la noche.")
+  @narrator.dialogue("En una noche estrellada en Springdale, nuestros protagonistas se encuentran en una excursión escolar en el bosque cercano.")
 
-    @emily.dialogue("Me da un poco de miedo, pero también estoy emocionada.")
+  @helen.dialogue("¡Qué emocionante! Nunca he estado en un bosque por la noche.")
 
-    @john.dialogue("El bosque de Springdale es conocido por su flora y fauna única. Espero que podamos aprender mucho hoy.")
+  @emily.dialogue("Me da un poco de miedo, pero también estoy emocionada.")
 
-    @maria.dialogue("¿Están nerviosos? ¿Tienen miedo de la oscuridad? ¡Ja! Yo no tengo miedo de nada.")
+  @john.dialogue("El bosque de Springdale es conocido por su flora y fauna única. Espero que podamos aprender mucho hoy.")
 
-    @alex.dialogue("Los bosques tienen una energía especial por la noche. Estoy ansioso por explorar.")
+  @maria.dialogue("¿Están nerviosos? ¿Tienen miedo de la oscuridad? ¡Ja! Yo no tengo miedo de nada.")
 
-    # Desarrollo de la trama
-    @helen.dialogue("¡Miren esa luciérnaga! Es tan hermosa.")
+  @alex.dialogue("Los bosques tienen una energía especial por la noche. Estoy ansioso por explorar.")
 
-    @emily.dialogue("¡Wow! ¡Hay tantas estrellas en el cielo!")
+  # Desarrollo de la trama
+  @helen.dialogue("¡Miren esa luciérnaga! Es tan hermosa.")
 
-    @john.dialogue("Vengan, chicos. Tengo una sorpresa para ustedes. He preparado un telescopio para que podamos observar las estrellas.")
+  @emily.dialogue("¡Wow! ¡Hay tantas estrellas en el cielo!")
 
-    @maria.dialogue("Qué aburrido. Prefiero explorar el bosque y encontrar algo emocionante.")
+  @john.dialogue("Vengan, chicos. Tengo una sorpresa para ustedes. He preparado un telescopio para que podamos observar las estrellas.")
 
-    @alex.dialogue("No todo tiene que ser emocionante, Maria. La belleza de la naturaleza también tiene su encanto.")
+  @maria.dialogue("Qué aburrido. Prefiero explorar el bosque y encontrar algo emocionante.")
 
-    @narrator.dialogue("Mientras nuestros héroes exploran el bosque, una misteriosa luz comienza a brillar en la distancia, atrayéndolos hacia ella.")
+  @alex.dialogue("No todo tiene que ser emocionante, Maria. La belleza de la naturaleza también tiene su encanto.")
 
-    @helen.dialogue("¿Qué es eso? ¡Vamos a ver!")
+  @narrator.dialogue("Mientras nuestros héroes exploran el bosque, una misteriosa luz comienza a brillar en la distancia, atrayéndolos hacia ella.")
 
-    @emily.dialogue("Parece... ¡una cueva!")
+  @helen.dialogue("¿Qué es eso? ¡Vamos a ver!")
 
-    @john.dialogue("¡Interesante! Pero debemos tener cuidado. Podría ser peligroso entrar sin saber qué nos espera.")
+  @emily.dialogue("Parece... ¡una cueva!")
 
-    @maria.dialogue("Yo no tengo miedo. Vamos a ver qué hay dentro.")
+  @john.dialogue("¡Interesante! Pero debemos tener cuidado. Podría ser peligroso entrar sin saber qué nos espera.")
 
-    @alex.dialogue("Estoy de acuerdo con Maria. No hay aventura sin un poco de riesgo. ¡Vamos!")
+  @maria.dialogue("Yo no tengo miedo. Vamos a ver qué hay dentro.")
 
-    # Clímax
-    @narrator.dialogue("Con valentía y curiosidad, nuestros héroes entran en la cueva, sin saber qué peligros o tesoros les esperan en su interior.")
+  @alex.dialogue("Estoy de acuerdo con Maria. No hay aventura sin un poco de riesgo. ¡Vamos!")
 
-    # Resolución
-    @narrator.dialogue("Dentro de la cueva, descubren antiguas ruinas y artefactos misteriosos que parecen provenir de una civilización perdida hace mucho tiempo.")
+  # Clímax
+  @narrator.dialogue("Con valentía y curiosidad, nuestros héroes entran en la cueva, sin saber qué peligros o tesoros les esperan en su interior.")
 
-    @helen.dialogue("¡Esto es increíble! Nunca hubiera imaginado encontrar algo así.")
+  # Resolución
+  @narrator.dialogue("Dentro de la cueva, descubren antiguas ruinas y artefactos misteriosos que parecen provenir de una civilización perdida hace mucho tiempo.")
 
-    @john.dialogue("Esto podría cambiar nuestra comprensión de la historia de Springdale. Debemos informar a las autoridades y a los arqueólogos sobre este hallazgo.")
+  @helen.dialogue("¡Esto es increíble! Nunca hubiera imaginado encontrar algo así.")
 
-    @maria.dialogue("Tal vez no fue una pérdida de tiempo después de todo. ¡Esto es emocionante!")
+  @john.dialogue("Esto podría cambiar nuestra comprensión de la historia de Springdale. Debemos informar a las autoridades y a los arqueólogos sobre este hallazgo.")
 
-    @alex.dialogue("Es increíble pensar en la historia que estas ruinas guardan. Me pregunto qué más podríamos encontrar si exploramos más a fondo.")
+  @maria.dialogue("Tal vez no fue una pérdida de tiempo después de todo. ¡Esto es emocionante!")
 
-    # Epílogo
-    @narrator.dialogue("Y así, nuestros héroes descubrieron un secreto enterrado en las profundidades del bosque, recordándonos que el mundo está lleno de misterios esperando a ser descubiertos por aquellos lo suficientemente valientes para buscarlos.")
+  @alex.dialogue("Es increíble pensar en la historia que estas ruinas guardan. Me pregunto qué más podríamos encontrar si exploramos más a fondo.")
+
+  # Epílogo
+  @narrator.dialogue("Y así, nuestros héroes descubrieron un secreto enterrado en las profundidades del bosque, recordándonos que el mundo está lleno de misterios esperando a ser descubiertos por aquellos lo suficientemente valientes para buscarlos.")
+
+  @narrator.dialogue("HISTORIA N°3 - FIN")
 
 end
 
